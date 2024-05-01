@@ -10,7 +10,7 @@ const request = require("request-promise");
 const LINE_HEADER = {
   "Content-Type": "application/json",
   Authorization:
-    "Bearer NW4enZy5OUQN5Bvm/qsm/0fEtwvHKHEU7fc0ok2yHsFtLKh4mf2RlIjuBj5pZGdt+dAKOqsneUZ3meZ31vyCJHaOl2iqIanIuRwK6QpsPUL2mg6wS1iyy2kEjbDrcj44hconMdtoFlz8+drnpNXqgAdB04t89/1O/w1cDnyilFU=",
+    "Bearer ***",
 };
 const app = express();
 let nIntervId;

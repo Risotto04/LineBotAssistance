@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const dayjs = require("dayjs");
 const chalk = require("chalk");
-const API_KEY = "AIzaSyBMdeVlKLL_rrup5vxHCKXgp22SEUUqSnk";
+const API_KEY = "***";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const multimodal = async (imageBinary) => {
   const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
