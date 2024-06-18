@@ -99,10 +99,13 @@
    npm install
    ```
 4. ป้อน API ของคุณใน `.env`
-   ```env
-     GEMINI_API_KEY = <Your Gemini API Key>
-     CHANNEL_ACCESS_TOKEN = <Your Channel Access Token>
-     CHANNEL_SECRET = <Your Channel Secret>
+   ```js
+   const LINE = {
+               port: 3000,
+               channelAccessToken: "Your Channel Secret",
+               channelSecret: "Your Channel Secret",
+   }
+   const GEMINI_API_KEY = "Your Gemini API Key"
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
