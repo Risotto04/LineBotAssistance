@@ -4,16 +4,19 @@ const axios = require("axios")
 const chalk = require("chalk")
 const line = require("@line/bot-sdk")
 const express = require("express")
-const config = require("./config.json")
 const gemini = require("./gemini")
 const request = require("request-promise")
+const config = require("./config")
+const app = express()
+
 const LINE_HEADER = {
   "Content-Type": "application/json",
-  Authorization: `Bearer ${config.channelAccessToken}`,
+  Authorization: `Bearer ${config.LINE.channelAccessToken}`,
 }
-const app = express()
+
 let nIntervId
-app.post("/webhook", line.middleware(config), (req, res) => {
+
+app.post("/webhook", line.middleware(config.LINE), (req, res) => {
   if (!Array.isArray(req.body.events)) {
     return res.status(500).end()
   }
@@ -73,6 +76,7 @@ async function handleImage(message, replyToken) {
   const msg = await gemini.multimodal(buffer)
   await reply(replyToken, msg)
 }
+
 const reply = async (token, msg) => {
   try {
     const response = await axios({
@@ -103,7 +107,8 @@ const reply = async (token, msg) => {
   }
   loadingAnimation()
 }
-const port = config.port
+
+const port = config.LINE.port
 app.listen(port, () => {
   console.clear()
   console.log(chalk.greenBright.bold(CoPilot).padStart(10))
