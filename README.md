@@ -92,7 +92,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Risotto04/LineChatBot.git
+   https://github.com/Risotto04/LineBotAssistance.git
    ```
 2. ติดตั้ง NPM packages
    ```sh
